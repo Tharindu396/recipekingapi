@@ -6,7 +6,11 @@ const User = require('./models/UserModel');
 const Recipe = require('./models/ProductModel');
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ["https://frontend-eight-ivory.vercel.app"],
+  methods:["POST","GET","UPDATE","DELETE"],
+  credentials:true
+}));
 app.use(express.json());
 
 const JWT_SECRET = 'your_jwt_secret'; // Store this in an environment variable in production
