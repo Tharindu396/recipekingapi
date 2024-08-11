@@ -13,7 +13,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-const JWT_SECRET = 'your_jwt_secret'; // Store this in an environment variable in production
+const JWT_SECRET = 'your_jwt_secret'; 
 
 // Authentication Middleware
 const authenticate = (req, res, next) => {
@@ -35,7 +35,7 @@ app.post('/signup', async (req, res) => {
 
   const user = new User({
     username,
-    password,  // No password hashing
+    password,  
     image,
     bio,
   });
@@ -62,7 +62,7 @@ app.post('/login', async (req, res) => {
 
 app.get('/users', async (req, res) => {
   try {
-    const users = await User.find({}).select('-password'); // Exclude passwords from the response
+    const users = await User.find({}).select('-password'); 
     res.status(200).json(users);
   } catch (error) {
     res.status(500).json({ message: error.message });
