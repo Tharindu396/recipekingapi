@@ -237,7 +237,7 @@ app.post('/users/:id/unfollow', authenticate, async (req, res) => {
 
 
 // Route to handle comments
-app.post('/Recipe/:id/comment', authenticate, async (req, res) => {
+app.post('/Recipe/:id/comment', async (req, res) => {
   try {
     const { id } = req.params;
     const { comment } = req.body;
@@ -268,7 +268,7 @@ app.post('/Recipe/:id/comment', authenticate, async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-app.get('/myRecipes', authenticate, async (req, res) => {
+app.get('/myRecipes', async (req, res) => {
   try {
     const recipes = await Recipe.find({ userId: req.user._id });
     res.status(200).json(recipes);
