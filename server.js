@@ -7,7 +7,9 @@ const Recipe = require('./models/ProductModel');
 const app = express();
 
 app.use(cors({
-  origin: ["https://frontend-eight-ivory.vercel.app"],
+  origin: ["https://frontend-eight-ivory.vercel.app",
+    "http://localhost:3000"
+  ],
   methods:["POST","GET","UPDATE","DELETE"],
   credentials:true
 }));
