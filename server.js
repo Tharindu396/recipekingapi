@@ -9,7 +9,7 @@ const app = express();
 app.use(cors({
   origin: ["https://frontend-eight-ivory.vercel.app",
     "http://localhost:3000",
-    "http://localhost:5173/"
+    "http://localhost:5173"
   ],
   methods:["POST","GET","UPDATE","DELETE"],
   credentials:true
